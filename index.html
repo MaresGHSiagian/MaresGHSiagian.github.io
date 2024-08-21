@@ -41,15 +41,18 @@
     </nav>
     <!-- Ahkir nvbar -->
     <!-- jumbotron -->
-    <div class="jumbotron text-center hidden">
+    <div class="jumbotron text-center">
       <img src="img/Portofolio.jpg" alt="Mares Siagian" width="300" class="rounded-circle img-thumbnail hidden" />
-      <h1 class="display-4 hidden">Mares GH Siagian</h1>
+      <h1 class="display-4">Mares GH Siagian</h1>
       <p class="lead hidden">
         <a href="https://www.linkedin.com/in/mares-siagian30" target="_blank" class="bi bi-linkedin">
           <i class="fab fa-linkedin"></i>
         </a>
         <a href="https://github.com/MaresGHSiagian" target="_blank" class="bi bi-github">
           <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/mares_siagian/" target="_blank" class="bi bi-instagram">
+          <i class="fab fa-instagram"></i>
         </a>
       </p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="hidden">
@@ -70,12 +73,19 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-4">
-            <p class="text">
-              I am a fresh graduate student from the Del Institute of Technology majoring in Information Systems. I have experience in web development, data warehousing, and mobile application design. Currently, I am very interested in
+            <p class="text-start">
+              Hello! My name is Mares Siagian. You can call me Mares. I live in Parhitean, North Sumatra. I am a graduate of Information System from Institut Teknologi Del. I like Futsal, Volleyball, and learning new things.
+          </div>
+          <div class="col-md-4">
+            <p class="text text-start">
+              I am a graduate student from the Del Institute of Technology majoring in Information Systems. I have experience in web development, data warehousing, and mobile application design. Currently, I am very interested in
               positions related to Data Analyst, Front End Development, and Back End Developer. I have good experience in leadership, integrity, communication skills, time management, teamwork, problem-solving, and quick learning, and I am
               ready to take on new challenges.
             </p>
-          </div>
+            </div>       
+          <div class="col-md-4">
+            <p class="text-start">
+            I am a Frontend developer with a solid foundation in Web design and development, backed by hands-on professional experience. I’m passionate about crafting seamless user experiences and clean, efficient code. I’m currently seeking new challenges as a Software Engineer, Frontend Engineer and Back End where I can contribute my expertise and continue to grow. </p>
             </div>       
           </div>
         </div>
@@ -143,7 +153,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <div class="card">
-              <img src="img/PLN.png" class="card-img-top" style="height: 306px;alt="projects4" />
+              <img src="img/PLN.png" class="card-img-top" style="height: 306px;" alt="projects4" />
               <div class="card-body">
                 <p class="card-text fw-bold">SISTEM INFORMASI ATTB(Aset tetap tidak Beropersi)PLN UP 3 MEDAN</p>
                 <p class="card-text">Web Design for Assisting Employees in Managing Assets PLN UP 3 Medan</p>
@@ -179,20 +189,21 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <form name="wpu-contact-form">
+            <form name="wpu-contact-form" onsubmit="return validateForm()">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" required />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" required />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" onclick="showMessage()">Kirim</button>
+              <button type="submit" class="btn btn-primary">Kirim</button>
+              <p id="error-message" style="display: none; color: red">Semua kolom wajib diisi!</p>
               <p id="success-message" style="display: none; color: green">Pesan berhasil dikirim!</p>
             </form>
           </div>
@@ -225,9 +236,26 @@
     </script>
 
     <script>
-      function showMessage() {
-        document.getElementById("success-message").style.display = "block";
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pesan = document.getElementById("pesan").value.trim();
+        const errorMessage = document.getElementById("error-message");
+        const successMessage = document.getElementById("success-message");
+      
+        if (!name || !email || !pesan) {
+          errorMessage.style.display = "block";
+          successMessage.style.display = "none";
+          return false; // Mencegah form dikirim jika ada field yang kosong
+        }
+      
+        errorMessage.style.display = "none";
+        successMessage.style.display = "block";
+      
+      
+        return false; // Mencegah reload halaman (jika diperlukan)
       }
+      
     </script>
   </body>
 </html>
