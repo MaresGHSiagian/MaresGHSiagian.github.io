@@ -192,13 +192,6 @@ body {
   }
 }
 
-.card {
-  animation: wiggle 2s ease-in-out infinite alternate;
-  transition: transform 2s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
 .card:hover {
   animation: none; /* Hentikan gerakan saat di-hover */
   transform: scale(1.05);
