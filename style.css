@@ -25,3 +25,65 @@ section {
     opacity: 1;
   }
 }
+
+.custom-button {
+  background-color: #00796b; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for height and width */
+  border-radius: 25px; /* Fully rounded corners */
+  font-size: 14px; /* Font size */
+  text-align: center; /* Center the text */
+  border: none; /* Remove default button border */
+  outline: none; /* Remove outline on focus */
+  font-family: Arial, sans-serif; /* Set the font */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  display: inline-block; /* Keep it inline */
+}
+
+.custom-button:hover {
+  background-color: #0097a7; /* Slightly darker blue on hover */
+}
+
+.custom-button:active {
+  background-color: #00796b; /* Even darker blue when clicked */
+}
+
+.btn-primary {
+  background-color: #00796b; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for height and width */
+  border-radius: 25px; /* Fully rounded corners */
+  font-size: 14px; /* Font size */
+  text-align: center; /* Center the text */
+  border: none; /* Remove default button border */
+  outline: none; /* Remove outline on focus */
+  font-family: Arial, sans-serif; /* Set the font */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  display: inline-block; /* Keep it inline */
+}
+
+.bi {
+  color: white; /* Icon color */
+  font-size: 25px; /* Icon size */
+  margin-right: 15px; /* Space between icons */
+  padding: 10px 15px; /* Padding inside the rectangle */
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  text-decoration: none; /* Remove underline */
+  background-color: #333; /* Default background color */
+  display: inline-block; /* Ensure padding and border-radius apply correctly */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.bi:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4); /* Intensify the shadow on hover */
+}
+
+.bi-linkedin {
+  background-color: #333; /* LinkedIn blue background */
+}
+
+.bi-github {
+  background-color: #333; /* GitHub black background */
+}
